@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Azure DevOps Task Generator</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="header">
+        <div class="brand">
+          <img src="assets/icon.svg" alt="" class="brand-logo">
+          <div>
+            <h1>Task Generator</h1>
+            <p>Create saved Azure DevOps task sets under a parent work item.</p>
+          </div>
+        </div>
+        <button id="saveAll" type="button">Save</button>
+      </header>
+
+      <section class="section">
+        <h2>Connection</h2>
+        <div class="grid">
+          <label>
+            Organization
+            <input id="organization" type="text" autocomplete="off" placeholder="my-org">
+          </label>
+          <label>
+            Project
+            <input id="project" type="text" autocomplete="off" placeholder="My Project">
+          </label>
+          <label>
+            Team
+            <input id="team" type="text" autocomplete="off" placeholder="My Team">
+          </label>
+          <label class="wide">
+            Personal access token
+            <span class="input-action">
+              <input id="pat" type="password" autocomplete="off" placeholder="Needs Work Items read/write">
+              <button id="togglePat" type="button" class="secondary">Show</button>
+            </span>
+          </label>
+          <label>
+            API version
+            <input id="apiVersion" type="text" autocomplete="off" value="7.1">
+          </label>
+          <label class="wide">
+            Effort field reference
+            <input id="effortFieldName" type="text" autocomplete="off" placeholder="Microsoft.VSTS.Scheduling.Effort">
+          </label>
+          <button id="loadPaths" type="button" class="secondary align-end">Refresh Lists</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Generate</h2>
+        <div class="generate-row">
+          <label>
+            Parent work item ID
+            <input id="parentId" type="number" min="1" placeholder="12345">
+          </label>
+          <button id="generate" type="button">Generate Tasks</button>
+        </div>
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-title-row">
+          <h2>Task Templates</h2>
+          <div class="button-row">
+            <button id="resetTemplates" type="button" class="secondary">Load Defaults</button>
+            <button id="addTemplate" type="button" class="secondary">Add Task</button>
+          </div>
+        </div>
+        <div id="templates" class="templates"></div>
+      </section>
+    </main>
+
+    <template id="templateCard">
+      <article class="template-card">
+        <div class="template-card-header">
+          <label class="enabled-label">
+            <input data-field="enabled" type="checkbox">
+            Enabled
+          </label>
+          <button data-action="remove" type="button" class="icon-button" title="Remove task">x</button>
+        </div>
+        <label>
+          Title
+          <input data-field="title" type="text" placeholder="Task title">
+        </label>
+        <label>
+          Description
+          <textarea data-field="description" rows="4" placeholder="Task description"></textarea>
+        </label>
+        <div class="grid">
+          <label>
+            Assigned To
+            <input data-field="assignedTo" type="text" placeholder="name@example.com">
+          </label>
+          <label>
+            Remaining Work
+            <input data-field="remainingWork" type="number" min="0" step="0.25" placeholder="2">
+          </label>
+          <label>
+            Effort
+            <input data-field="effort" type="number" min="0" step="0.25" placeholder="2">
+          </label>
+          <label>
+            Activity
+            <select data-field="activity"></select>
+          </label>
+          <label>
+            Tags
+            <input data-field="tags" type="text" placeholder="tag one; tag two">
+          </label>
+          <label>
+            Area Path
+            <select data-field="areaPath"></select>
+          </label>
+          <label>
+            Iteration Path
+            <select data-field="iterationPath"></select>
+          </label>
+        </div>
+        <details>
+          <summary>Custom fields</summary>
+          <textarea data-field="customFields" rows="4" placeholder='{"Custom.FieldName":"Value"}'></textarea>
+        </details>
+      </article>
+    </template>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

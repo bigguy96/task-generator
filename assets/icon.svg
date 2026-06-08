@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Azure DevOps Task Generator logo">
+  <defs>
+    <linearGradient id="background" x1="20" y1="14" x2="108" y2="118" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0f62fe"/>
+      <stop offset="1" stop-color="#0048c7"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="24" fill="url(#background)"/>
+  <path d="M64 44v16M34 60h60M34 60v12M64 60v12M94 60v12" fill="none" stroke="#d9e7ff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="34" y="20" width="60" height="28" rx="7" fill="#ffffff"/>
+  <rect x="17" y="73" width="34" height="30" rx="7" fill="#ffffff"/>
+  <rect x="47" y="73" width="34" height="30" rx="7" fill="#ffffff"/>
+  <rect x="77" y="73" width="34" height="30" rx="7" fill="#ffffff"/>
+  <path d="M28 88l5 5 10-12" fill="none" stroke="#24a148" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M58 88l5 5 10-12" fill="none" stroke="#24a148" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M88 88l5 5 10-12" fill="none" stroke="#24a148" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

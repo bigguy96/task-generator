@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Task Generator toolbar icon">
+  <rect width="128" height="128" rx="26" fill="#0f62fe"/>
+  <rect x="26" y="24" width="76" height="80" rx="12" fill="#ffffff"/>
+  <rect x="42" y="42" width="34" height="8" rx="4" fill="#0f62fe"/>
+  <rect x="42" y="61" width="45" height="8" rx="4" fill="#8fb8ff"/>
+  <rect x="42" y="80" width="30" height="8" rx="4" fill="#8fb8ff"/>
+  <circle cx="91" cy="87" r="24" fill="#24a148"/>
+  <path d="M91 73v28M77 87h28" fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round"/>
+</svg>
